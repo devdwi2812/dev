@@ -1,7 +1,7 @@
 {
   "name": "cell",
   "version": "0.0.1",
-  "description": "[WIP] PN:OI Single Artificial Brain Cell",
+  "description": "[WIP] Single unit of I/O computations using PN:OI",
   "author": "makesites",
   "contributors": [
     {

@@ -1,7 +1,7 @@
 
 ## PN:OI :: CELL
 
-Single brain cell in PN:OI
+Single unit of I/O computations using PN:OI
 
 
 ## Install
@@ -15,7 +15,7 @@ npm install cell
 
 ## Credits
 
-Created by Makis Tracend( [http://github.com/tracend](@tracend) ) 
+Created by Makis Tracend( [@tracend](http://github.com/tracend) ) 
 
 Distributed through [Makesites.org](http://makesites.org)
 
