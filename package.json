@@ -1,0 +1,35 @@
+{
+  "name": "cell",
+  "version": "0.0.1",
+  "description": "[WIP] PN:OI Single Artificial Brain Cell",
+  "author": "makesites",
+  "contributors": [
+    {
+      "name": "Makis Tracend",
+      "email": "makis@makesit.es"
+    }
+  ],
+  "homepage": "http://pnoi.net",
+  "keywords": [
+    "node", "express", "creative", "ai"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makesites/cell"
+  },
+  "bugs": {
+    "url": "https://github.com/makesites/cell/issues"
+  }, 
+  "licenses": [
+    {
+      "type": "MIT License",
+      "url": "http://www.makesites.org/licenses/MIT"
+    }
+  ], 
+  "main": "./index.js",
+  "engines": {
+    "node": ">0.8.x"
+  },
+  "dependencies": {
+  }
+}
