@@ -27,5 +27,5 @@ Initiated by Makis Tracend( [@tracend](http://github.com/tracend) )
 
 Distributed through [Makesites.org](http://makesites.org)
 
-Released under the MIT license: 
-[http://makesites.org/licenses/MIT](http://makesites.org/licenses/MIT)
+Released under the [MPL v2.0](http://www.mozilla.org/MPL/2.0/) & [AGPL](http://www.gnu.org/licenses/agpl.html)
+
