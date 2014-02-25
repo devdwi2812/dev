@@ -1,7 +1,7 @@
 
-## PN:OI :: CELL
+## CELL
 
-Single unit of I/O computations using PN:OI
+Single computation unit for simple I/O and (temporary) storage
 
 
 ## Install
@@ -13,9 +13,17 @@ npm install cell
 ```
 
 
+## Showcase 
+
+Notable applications of cell:
+
+* [Construct Cache](http://github.com/constructjs/cache)
+* [PN:OI](http://pnoi.net)
+
+
 ## Credits
 
-Created by Makis Tracend( [@tracend](http://github.com/tracend) ) 
+Initiated by Makis Tracend( [@tracend](http://github.com/tracend) ) 
 
 Distributed through [Makesites.org](http://makesites.org)
 
