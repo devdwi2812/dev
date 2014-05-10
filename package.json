@@ -1,35 +1,37 @@
 {
-  "name": "cell",
-  "version": "0.0.1",
-  "description": "[WIP] Single unit of I/O computations using PN:OI",
-  "author": "makesites",
-  "contributors": [
-    {
-      "name": "Makis Tracend",
-      "email": "makis@makesit.es"
-    }
-  ],
-  "homepage": "http://pnoi.net",
-  "keywords": [
-    "node", "express", "creative", "ai"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/makesites/cell"
-  },
-  "bugs": {
-    "url": "https://github.com/makesites/cell/issues"
-  }, 
-  "licenses": [
-    {
-      "type": "MIT License",
-      "url": "http://www.makesites.org/licenses/MIT"
-    }
-  ], 
-  "main": "./index.js",
-  "engines": {
-    "node": ">0.8.x"
-  },
-  "dependencies": {
-  }
+	"name": "cell",
+	"version": "0.0.1",
+	"description": "Single unit of I/O computations",
+	"author": "makesites",
+	"contributors": [
+		{
+			"name": "Makis Tracend",
+			"email": "makis@makesit.es"
+		}
+	],
+	"homepage": "http://makesites.org/cell",
+	"keywords": [
+		"cell", "io", "data", "input", "output", "cache"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/makesites/cell"
+	},
+	"bugs": {
+		"url": "https://github.com/makesites/cell/issues"
+	},
+	"licenses": [
+		{
+			"type": "MIT License",
+			"url": "http://www.makesites.org/licenses/MIT"
+		}
+	],
+	"main": "./index.js",
+	"engines": {
+		"node": ">0.8.x"
+	},
+	"dependencies": {
+		"ildb": "*",
+		"idb-wrapper": "*"
+	}
 }
