@@ -1,0 +1,22 @@
+{
+	"name": "cell.js",
+	"version": "0.0.1",
+	"description": "Single unit of I/O computations",
+	"authors": [
+		"Makis Tracend <makis@makesit.es>"
+	],
+	"license": "MIT",
+	"keywords": [
+		"cell", "io", "data", "input", "output", "cache"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/makesites/cell.git"
+	},
+	"ignore": [
+		"node_modules"
+	],
+	"dependencies": {
+	}
+}
+
