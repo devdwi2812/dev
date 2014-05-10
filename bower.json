@@ -1,6 +1,6 @@
 {
 	"name": "cell.js",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "Single unit of I/O computations",
 	"authors": [
 		"Makis Tracend <makis@makesit.es>"
