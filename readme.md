@@ -1,19 +1,31 @@
 
 ## CELL
 
-Single computation unit for simple I/O and (temporary) storage
+Single computation unit for simple I/O and (temporary) storage. Works on the client (browser) with IndexedDB and on the server (node.js) with LevelDB.
 
 
 ## Install
 
-Using npm: 
+On the server, using npm:
 
 ```
 npm install cell
 ```
 
+On the client, using bower:
 
-## Showcase 
+```
+npm install cell.js
+```
+
+## Methods
+
+* **set( data )**
+
+* **get( key )**
+
+
+## Showcase
 
 Notable applications of cell:
 
@@ -23,7 +35,7 @@ Notable applications of cell:
 
 ## Credits
 
-Initiated by Makis Tracend( [@tracend](http://github.com/tracend) ) 
+Initiated by Makis Tracend( [@tracend](http://github.com/tracend) )
 
 Distributed through [Makesites.org](http://makesites.org)
 
