@@ -1,0 +1,34 @@
+<!doctype html>
+
+<title>Cell: DB example</title>
+
+<body>
+	<div id="main"></div>
+
+	<!-- client lib -->
+	<script src="../build/cell.js"></script>
+
+	<!-- example logic -->
+	<script type="text/javascript">
+		var main = document.getElementById("main");
+
+		var cell = new Cell();
+
+		var action1 = document.createElement("p");
+		action1.innerHTML = "Action #1: initializing";
+		main.appendChild( action1 );
+
+		var data = { item: "value" };
+		cell.set(data);
+		var action2 = document.createElement("p");
+		action2.innerHTML = "Action #2: setting data, "+ JSON.stringify( data );
+		main.appendChild( action2 );
+
+		cell.get("item", function( response ){
+			var action3 = document.createElement("p");
+			action3.innerHTML = "Action #3: retrieving item, "+ JSON.stringify( response ) ;
+			main.appendChild( action3 );
+		});
+
+	</script>
+</body>
