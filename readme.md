@@ -1,7 +1,15 @@
+# CELL
 
-## CELL
+Like neuron cells in biology, Cell is a single computation unit for simple I/O with attached storage. Its main purpose is to be easily integrated and stackable to any JavaScript app, enabling it with additional processing on an abstracted level.
 
-Single computation unit for simple I/O and (temporary) storage. Works on the client (browser) with IndexedDB and on the server (node.js) with LevelDB.
+Works on the client (browser) with IndexedDB and on the server (node.js) with LevelDB.
+
+
+## Features
+
+* Storing string & blob data
+* Compute and analyze existing data
+* Save and load a persistent state
 
 
 ## Install
@@ -18,11 +26,27 @@ On the client, using bower:
 npm install cell.js
 ```
 
+
 ## Methods
 
-* **set( data )**
+* **set( data )** : Accepts multiple items in the form of a key/value object.
 
-* **get( key )**
+* **get( key )** : Accesses an item already saved
+
+* **remove( key )** : Accesses an item already saved
+
+* **define( name, method )** Passes an object with new methods
+
+* **extend( methods )** Passes an object with new methods
+
+* **save( key )** : Accesses an item already saved
+
+* **load( key )** : Accesses an item already saved
+
+
+## Extending
+
+Cell has the ```extend``` and ```define``` methods that allows it to be extended with custom methods, similarly to Backbone's ```extend```, Underscore's ```mixin``` and Handlebars' ```registerHelper```. All (new) methods are meant to be targeted around the data available to the cell unit.
 
 
 ## Showcase
