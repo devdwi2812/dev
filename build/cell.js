@@ -2,7 +2,7 @@
  * @name cell
  * Single unit of I/O computations
  *
- * Version: 0.0.1 (Sat, 10 May 2014 11:08:43 GMT)
+ * Version: 0.1.0 (Sat, 10 May 2014 23:36:10 GMT)
  * Homepage: http://makesites.org/cell
  *
  * @author makesites
@@ -1423,6 +1423,7 @@ Cell.prototype = {
 	},
 
 	// Data interface
+
 	set: function( data ){
 		var self = this;
 
@@ -1474,13 +1475,91 @@ Cell.prototype = {
 		});
 	},
 
+	// Logic
+
+	// - define a single method
+	define: function( name, method ){
+		// validation?
+		this[name] = method;
+	},
+
+	// - Extend with custom methods
+	extend: function( methods ){
+		// validation?
+		for( var name in methods ){
+			this[name] = methods[name];
+		}
+	},
+
+	// - Checks the state of an item
+	check: function( options ){
+		options = options || {};
+		// fallbacks
+		var key = options.key || false;
+		var value = options.value || false;
+		var cb = options.cb || function(){};
+		// prerequisite
+		if( !key ) return;
+		// if a value is provided
+		this.get(key, function( stored ){
+			// exit now if there's no value
+			if( !stored ) return cb( false );
+			// if value compare
+			if( value ) return cb( (stored == value) );
+			// return the timestamp of the stored item
+			//...
+		});
+	},
+
+	// Persistance
+
+	// - Saves existing data is a separate DB
+	save: function( name ){
+		// fallback
+		name = name || (new Date()).getTime();
+		// set the store
+		var store = "cell_"+ name;
+		// create a separate cell instance
+		var cell = new Cell({
+			store: store
+		});
+		// get all data
+		this.all(function( data ){
+			// save in new store
+			cell.set( data );
+		});
+		// keep a reference to the name
+		return name;
+	},
+
+	// - Loads data from a persistant state
+	load: function( name ){
+		// fallback
+		name = name || false;
+		// prerequisite
+		if( !name ) return;
+		// set the store
+		var store = "cell_"+ name;
+		var cell = new Cell({
+			store: store
+		});
+		// get all existing data
+		cell.all(function( data ){
+			// delete existing data first?
+			// save in store
+			this.set( data );
+		});
+
+	},
+
 	// Internal methods
+
 	_processQueue: function(){
 		for(var i in _queue){
 			var action = _queue[i].action;
 			var args = _queue[i].args;
 			this[action].apply(this, args);
-		};
+		}
 	}
 
 };
