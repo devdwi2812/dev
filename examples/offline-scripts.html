@@ -1,0 +1,128 @@
+<!doctype html>
+
+<title>Cell: Offline Scripts</title>
+
+<!-- Scripts -->
+<script data-src="//code.jquery.com/jquery-2.1.1.js"></script>
+<script data-src="//builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v1.3.0.js"></script>
+<script data-src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+
+<body>
+	<div id="main">
+	<h2>Online Status: <span id="online-status"></span></h2>
+	<h2>Libraries</h2>
+	<p>jQuery (code.jquery.com): <span id="jquery-state"></span></p>
+	<p>Handlebars (s3.amazonaws.com): <span id="handlebars-state"></span></p>
+	<p>Underscore (cdnjs.cloudflare.com): <span id="underscore-state"></span></p>
+
+	<h1>Loading...</h1>
+
+	</div>
+
+	<!-- client lib -->
+	<script src="../build/cell.js"></script>
+
+	<!-- example logic -->
+	<script type="text/javascript">
+		var main = document.getElementById("main");
+
+		var cell = new Cell();
+
+		var scripts = document.getElementsByTagName("head")[0].getElementsByTagName("script");
+
+		var online = navigator.onLine;
+		document.getElementById("online-status").innerHTML = ( online ) ? "online" : "offline";
+
+		for (var i = 0; i < scripts.length; i++) {
+			var src = scripts[i].getAttribute("data-src");
+			if( online ){
+				// use the cdn resources
+				scripts[i].setAttribute("src", src);
+				// cache scripts
+				loadScript( src );
+				// check if files already cached
+				//cell.check(src, function(){
+
+				//});
+			} else {
+				// use cached versions
+				cell.get(src, function( value ){
+					console.log("value", value);
+					var url = URL.createObjectURL( value );
+					scripts[i].setAttribute("src", url);
+				});
+
+			}
+		}
+
+
+		function loadScript( url ){
+			// Create XHR
+			var xhr = new XMLHttpRequest(),
+				data = {};
+
+			xhr.open("GET", url, true);
+
+			xhr.addEventListener("load", function () {
+				console.log("data", url);
+				if (xhr.status === 200) {
+
+					// File as response
+					data[url] = xhr.response;
+
+					// Put the received file into IndexedDB
+					cell.set( data );
+				}
+			}, false);
+			// Send XHR
+			xhr.send();
+		}
+
+/*
+		console.log("scripts", scripts);
+		var action1 = document.createElement("p");
+		action1.innerHTML = "Action #1: initializing";
+		main.appendChild( action1 );
+
+		var data = { item: "value" };
+		cell.set(data);
+		var action2 = document.createElement("p");
+		action2.innerHTML = "Action #2: setting data, "+ JSON.stringify( data );
+		main.appendChild( action2 );
+
+		cell.get("item", function( response ){
+			var action3 = document.createElement("p");
+			action3.innerHTML = "Action #3: retrieving item, "+ JSON.stringify( response ) ;
+			main.appendChild( action3 );
+		});
+*/
+		// better use onload events?
+		var check = setInterval(function(){
+			checkState();
+		}, 1000);
+
+		function checkState(){
+			var loaded = 0;
+			// lookup in global namespace
+			if( window.$ ){
+				document.getElementById("jquery-state").innerHTML = "done";
+				loaded++;
+			}
+			if( window.Handlebars ){
+				document.getElementById("handlebars-state").innerHTML = "done";
+				loaded++;
+			}
+			if( window._ ){
+				document.getElementById("underscore-state").innerHTML = "done";
+				loaded++;
+			}
+
+			if( loaded == scripts.length){
+				// stop loop
+				clearInterval( check );
+				document.getElementsByTagName("h1")[0].innerHTML = "Done!"
+			}
+		}
+
+	</script>
+</body>
