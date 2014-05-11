@@ -22,8 +22,12 @@
 	},
 	"licenses": [
 		{
-			"type": "MIT License",
-			"url": "http://www.makesites.org/licenses/MIT"
+			"type": "MPL v2.0",
+			"url": "http://www.mozilla.org/MPL/2.0/"
+		},
+		{
+			"type": "AGPL",
+			"url": "http://www.gnu.org/licenses/agpl.html"
 		}
 	],
 	"main": "./index.js",
