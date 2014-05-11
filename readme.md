@@ -12,36 +12,42 @@ Works on the client (browser) with IndexedDB and on the server (node.js) with Le
 * Save and load a persistent state
 
 
+## Examples
+
+* [IndexedDB test](http://rawgit.com/makesites/cell/master/examples/db.html)
+* [Offline Scripts](http://rawgit.com/makesites/cell/master/examples/offline-scripts.html)
+
+
 ## Install
 
-On the server, using npm:
+On the server, using NPM:
 
 ```
 npm install cell
 ```
 
-On the client, using bower:
+On the client, using Bower:
 
 ```
-npm install cell.js
+bower install cell.js
 ```
 
 
 ## Methods
 
-* **set( data )** : Accepts multiple items in the form of a key/value object.
+* **set( data )** : Store data. Accepts multiple items in the form of a key/value object.
 
 * **get( key )** : Accesses an item already saved
 
-* **remove( key )** : Accesses an item already saved
+* **remove( key )** : Delete an (existing) item
 
-* **define( name, method )** Passes an object with new methods
+* **define( name, method )** Define a new method in the ```cell``` namespace
 
-* **extend( methods )** Passes an object with new methods
+* **extend( methods )** Accpets an object with new methods
 
-* **save( key )** : Accesses an item already saved
+* **save( key )** : To persist the state of the data
 
-* **load( key )** : Accesses an item already saved
+* **load( key )** : To retrieve a previous state
 
 
 ## Extending
