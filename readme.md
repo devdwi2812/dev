@@ -1,6 +1,6 @@
 # CELL
 
-Like neuron cells in biology, Cell is a single computation unit for simple I/O with attached storage. Its main purpose is to be easily integrated and stackable to any JavaScript app, enabling it with additional processing on an abstracted level.
+Like neuron cells in biology, Cell is a single computation unit for simple I/O with attached storage. Its main purpose is to be easily integrated and stackable to any JavaScript app, enabling it with additional processing as needed, on an abstracted level.
 
 Works on the client (browser) with IndexedDB and on the server (node.js) with LevelDB.
 
@@ -43,7 +43,7 @@ bower install cell.js
 
 * **define( name, method )** Define a new method in the ```cell``` namespace
 
-* **extend( methods )** Accpets an object with new methods
+* **extend( methods )** Accepts an object with new methods
 
 * **save( key )** : To persist the state of the data
 
@@ -70,4 +70,3 @@ Initiated by Makis Tracend( [@tracend](http://github.com/tracend) )
 Distributed through [Makesites.org](http://makesites.org)
 
 Released under the [MPL v2.0](http://www.mozilla.org/MPL/2.0/) & [AGPL](http://www.gnu.org/licenses/agpl.html)
-
