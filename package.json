@@ -20,16 +20,7 @@
 	"bugs": {
 		"url": "https://github.com/makesites/cell/issues"
 	},
-	"licenses": [
-		{
-			"type": "MPL v2.0",
-			"url": "http://www.mozilla.org/MPL/2.0/"
-		},
-		{
-			"type": "AGPL",
-			"url": "http://www.gnu.org/licenses/agpl.html"
-		}
-	],
+	"license": "MPL-2.0 OR AGPL-3.0",
 	"main": "./index.js",
 	"engines": {
 		"node": ">=10.x.x"
